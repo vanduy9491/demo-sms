@@ -1,13 +1,13 @@
 {
   "name": "notus-nextjs",
-  "homepage": "https://demos.creative-tim.com/notus-nextjs",
+  "homepage": "https://vanduy9491.github.io/demo-sms",
   "version": "1.1.0",
   "main": "server.js",
   "engines": {
     "node": "16.13.2"
   },
   "description": "Notus NextJS - A free Tailwind CSS, NextJS and React Ui Kit and Admin by Creative Tim.",
-  "repository": "https://github.com/creativetimofficial/notus-nextjs",
+  "repository": "https://github.com/vanduy9491/demo-sms.git",
   "license": "MIT",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.3",
@@ -20,6 +20,7 @@
     "chart.js": "2.9.4",
     "font-awesome": "^4.7.0",
     "formidable": "^2.0.1",
+    "gh-pages": "^4.0.0",
     "i18next": "^21.8.3",
     "next": "10.0.9",
     "react": "17.0.1",
@@ -34,7 +35,9 @@
     "dev": "next dev",
     "install:clean": "rm -rf node_modules/ && rm -rf package-lock.json && npm install && npm run build:tailwind && npm run dev",
     "build:tailwind": "tailwind build styles/index.css -o styles/tailwind.css",
-    "server": "json-server --watch data.json --port 5000"
+    "server": "json-server --watch data.json --port 5000",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
